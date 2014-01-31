@@ -3,21 +3,6 @@
 # Make boot partition writeable, we want to modify files there
 mount -o remount,rw /boot
 
-# Update mirrorlist manually
-vi /etc/pacman.d/mirrorlist
-
-# Update sources and install a proper editor
-pacman -Sy --noconfirm vim
-
-# Edit locale manually
-vim /etc/locale.conf
-echo KEYMAP=de-latin1-nodeadkeys > /etc/vconsole.conf
-ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime -f
-
-# Properly initialize pacman
-pacman-key --init --noconfirm
-pacman -Syu --noconfirm
-
 # Copy files in place
 cp data/* /
 
