@@ -14,6 +14,7 @@ echo -n " ro" >> /boot/commandline.txt
 # Create display user
 pacman -S --noconfirm lvm2 sudo
 useradd -g users -s /bin/bash -d /home/display display
+chown -R display:users /opt/home/display/
 
 # Enable auto login service
 systemctl daemon-reload
@@ -25,7 +26,7 @@ pacman -S --noconfirm netctl openbox midori ttf-freefont
 pacman -S --noconfirm xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool
 
 # Install display crontab
-sudo -u display crontab ./opt/home/display/crontab
+sudo -u display crontab /opt/home/display/crontab
 
 # Move log directry to tmpfs partition
 rm -rf /var/log
