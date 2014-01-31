@@ -16,13 +16,15 @@ Updated sources and install a proper editor
 
 Edited locale manually
 
-    vim /etc/locale.conf
-    echo KEYMAP=de-latin1-nodeadkeys > /etc/vconsole.conf
+    echo KEYMAP=\"de-latin1-nodeadkeys\ > /etc/vconsole.conf
+    echo LANG=\"de_DE.UTF-8\" > /etc/locale.conf
+    echo LANGUAGE=\"de_DE.UTF-8\" >> /etc/locale.conf
+    locale-gen
     ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime -f
 
 Properly initialized pacman
 
-    pacman-key --init --noconfirm
+    pacman-key --init
     pacman -Syu --noconfirm
 
 Installed Git
@@ -34,7 +36,7 @@ Installation
 
 Clone the sources
 
-    https://github.com/nils-werner/kioskOS.git
+    git clone https://github.com/nils-werner/kioskOS.git
 
 Run the installer
 
