@@ -6,8 +6,12 @@ pacman -S --noconfirm sudo
 # Copy files in place
 cp -r data/* /
 
+# Rotate screen
 echo display_rotate=3 >> /boot/config.txt
 echo disable_overscan=1 >> /boot/config.txt
+
+# Free enough memory for the browser to work
+echo gpu_mem=64 >> /boot/config.txt
 
 echo -n " ro" >> /boot/commandline.txt
 
