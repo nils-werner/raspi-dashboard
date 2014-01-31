@@ -23,6 +23,9 @@ systemctl enable rc-local
 systemctl disable getty@tty1
 systemctl enable autologin@tty1
 
+# For some stupid reason name resolving does not work if we do not do this
+systemctl enable dhcpcd
+
 # Install tools and X
 pacman -S --noconfirm netctl openbox midori ttf-freefont
 pacman -S --noconfirm xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool
