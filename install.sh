@@ -19,6 +19,7 @@ pacman-key --init --noconfirm
 pacman -Syu --noconfirm
 
 # Copy files in place
+cp data/* /
 
 # Create display user
 pacman -S --noconfirm libarchive lvm2 adduser sudo
