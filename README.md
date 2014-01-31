@@ -1,6 +1,15 @@
 kioskOS
 =======
 
+kioskOS is a script to modify a Arch Linux installation running on a Raspberry Pi. The result is a Linux that
+
+ - automatically boots into a minimalistic, frameless browser when started
+ - is 100% robust to not being shut down
+
+The result is a display driver that can be switched on and off at any time of the day and that will still reliably show the same image after being switched on again.
+
+Please note that this project does not include any webserver or storage to save data to be shown. The data to be shown must be accessible over the network, provided by a different device.
+
 Preparations
 ------------
 
@@ -35,14 +44,34 @@ Installed Git
 
 And lastly grown the partition to be at least 4 GB in size (use `resize.sh` provided here if unsure what to do)
 
-Installation
-------------
+Customization
+-------------
 
 Clone the sources
 
     git clone https://github.com/nils-werner/kioskOS.git
 
-Run the installer
+There are two places you might want to customize:
+
+    data/etc/netctl/wlan0
+
+is a generic template for a wireless LAN connection, protected by WPA. Input your WLAN SSID and password if you want to use wireless LAN
+
+secondly 
+
+    data/home/display/.config/midori/config
+
+contains a field named `homepage`. This field will be loaded by the browser upon booting. Insert your URL here.
+
+Installation
+------------
+
+After customizing your kiosk, run the installer
 
     cd kioskOS
     bash install.sh
+
+Feedback, Contributions
+-----------------------
+
+This is a very rough first attempt to create a simple and robust kiosk display driver. Feedback and improvements are very welcome!
