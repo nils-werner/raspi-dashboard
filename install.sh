@@ -13,13 +13,16 @@ echo -n " ro" >> /boot/commandline.txt
 
 # Create display user
 pacman -S --noconfirm lvm2 sudo
-useradd -g users -s /bin/bash -d /home/display display
+if ! id -u display >/dev/null 2>&1; then
+    useradd -g users -s /bin/bash -d /home/display display
+fi
 chown -R display:users /opt/home/display/
 
 # Enable auto login service
 systemctl daemon-reload
+systemctl enable rc-local
 systemctl disable getty@tty1
-systemctl enable autologin@tty1.service
+systemctl enable autologin@tty1
 
 # Install tools and X
 pacman -S --noconfirm netctl openbox midori ttf-freefont

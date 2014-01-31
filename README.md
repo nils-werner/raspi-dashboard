@@ -4,17 +4,19 @@ kioskOS
 Preparations
 ------------
 
-This script assumes you have done the following
+This script assumes you have done the following:
 
-Updated your mirrorlist
+Installed the latest image of [archlinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) and booted the system.
+
+Customized your mirrorlist
 
     vi /etc/pacman.d/mirrorlist
 
-Updated sources and install a proper editor
+Updated sources and installed a proper editor
 
     pacman -Sy --noconfirm vim
 
-Edited locale manually
+Edited locale and keyboard layout as well as timezone
 
     echo KEYMAP=\"de-latin1-nodeadkeys\ > /etc/vconsole.conf
     echo LANG=\"de_DE.UTF-8\" > /etc/locale.conf
@@ -22,10 +24,10 @@ Edited locale manually
     locale-gen
     ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime -f
 
-Properly initialized pacman
+Properly initialized pacman and upgraded system
 
     pacman-key --init
-    pacman -Syu --noconfirm
+    pacman -Syu
 
 Installed Git
 
