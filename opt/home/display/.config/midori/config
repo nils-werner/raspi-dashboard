@@ -1,0 +1,19 @@
+[settings]
+default-encoding=ISO-8859-1
+enable-developer-extras=true
+enable-site-specific-quirks=true
+enable-javascript=true
+enable-file-access-from-file-uris=true
+enable-universal-access-from-file-uris=true
+last-window-width=988
+last-window-height=617
+last-window-state=MIDORI_WINDOW_FULLSCREEN
+location-entry-search=https://duckduckgo.com/?q=%s
+show-navigationbar=false
+show-statusbar=false
+toolbar-items=TabNew,Back,NextForward,ReloadStop,BookmarkAdd,Location,Search,Trash,CompactMenu
+homepage=http://www.google.com/
+tabhome=about:dial
+download-folder=/home/display
+load-on-startup=MIDORI_STARTUP_HOMEPAGE
+user-agent=Mozilla/5.0 (X11; Linux) AppleWebKit/537.6 (KHTML, like Gecko) Chrome/18.0.1025.133 Safari/537.6 Midori/0.5

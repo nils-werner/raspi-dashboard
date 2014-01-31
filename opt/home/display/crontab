@@ -1,0 +1,5 @@
+DISPLAY=:0
+
+0 22 * * * /opt/vc/bin/tvservice -o
+30 7 * * * sudo reboot
+0 * * * * killall midori
