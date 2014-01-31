@@ -14,11 +14,11 @@ Customized your mirrorlist
 
 Updated sources and installed a proper editor
 
-    pacman -Sy --noconfirm vim
+    pacman -Sy vim
 
 Edited locale and keyboard layout as well as timezone
 
-    echo KEYMAP=\"de-latin1-nodeadkeys\ > /etc/vconsole.conf
+    echo KEYMAP=\"de-latin1-nodeadkeys\" > /etc/vconsole.conf
     echo LANG=\"de_DE.UTF-8\" > /etc/locale.conf
     echo LANGUAGE=\"de_DE.UTF-8\" >> /etc/locale.conf
     locale-gen
@@ -31,7 +31,9 @@ Properly initialized pacman and upgraded system
 
 Installed Git
 
-    pacman -S --noconfirm git
+    pacman -S git
+
+And lastly grown the partition to be at least 4 GB in size (use `resize.sh` provided here if unsure what to do)
 
 Installation
 ------------

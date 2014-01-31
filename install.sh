@@ -1,10 +1,10 @@
 #/bin/env bash
 
-# Make boot partition writeable, we want to modify files there
-mount -o remount,rw /boot
+# Install sudo
+pacman -S --noconfirm sudo
 
 # Copy files in place
-cp data/* /
+cp -r data/* /
 
 echo display_rotate=3 >> /boot/config.txt
 echo disable_overscan=1 >> /boot/config.txt
@@ -12,7 +12,6 @@ echo disable_overscan=1 >> /boot/config.txt
 echo -n " ro" >> /boot/commandline.txt
 
 # Create display user
-pacman -S --noconfirm lvm2 sudo
 if ! id -u display >/dev/null 2>&1; then
     useradd -g users -s /bin/bash -d /home/display display
 fi
