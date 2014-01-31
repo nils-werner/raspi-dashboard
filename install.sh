@@ -6,6 +6,11 @@ mount -o remount,rw /boot
 # Copy files in place
 cp data/* /
 
+echo display_rotate=3 >> /boot/config.txt
+echo disable_overscan=1 >> /boot/config.txt
+
+echo -n " ro" >> /boot/commandline.txt
+
 # Create display user
 pacman -S --noconfirm lvm2 sudo
 useradd -g users -s /bin/bash -d /home/display display
