@@ -12,6 +12,13 @@ echo disable_overscan=1 >> /boot/config.txt
 
 echo "Free enough memory for the browser to work"
 echo gpu_mem=64 >> /boot/config.txt
+echo gpu_mem_512=64 >> /boot/config.txt
+echo gpu_mem_256=64 >> /boot/config.txt
+echo arm_freq=1000 >> /boot/config.txt
+echo core_freq=500 >> /boot/config.txt
+echo sdram_freq=500 >> /boot/config.txt
+echo over_voltage=6 >> /boot/config.txt
+
 
 echo -n " ro" >> /boot/commandline.txt
 
