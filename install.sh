@@ -1,45 +1,46 @@
 #/bin/env bash
 
-# Install sudo
-pacman -S --noconfirm sudo
+echo "Installing sudo"
+pacman -S --noconfirm sudo > /dev/null
 
-# Copy files in place
+echo "Copying files in place"
 cp -r data/* /
 
-# Rotate screen
+echo "Customizing Config and Kernel Commandline"
 echo display_rotate=3 >> /boot/config.txt
 echo disable_overscan=1 >> /boot/config.txt
 
-# Free enough memory for the browser to work
+echo "Free enough memory for the browser to work"
 echo gpu_mem=64 >> /boot/config.txt
 
 echo -n " ro" >> /boot/commandline.txt
 
-# Create display user
+echo "Createing display user"
 if ! id -u display >/dev/null 2>&1; then
     useradd -g users -s /bin/bash -d /home/display display
 fi
 chown -R display:users /opt/home/display/
 
-# Enable auto login service
-systemctl daemon-reload
-systemctl enable rc-local
-systemctl disable getty@tty1
-systemctl enable autologin@tty1
+echo "Enable auto login service"
+systemctl daemon-reload > /dev/null
+systemctl enable rc-local > /dev/null
+systemctl disable getty@tty1 > /dev/null
+systemctl enable autologin@tty1 > /dev/null
 
 # For some stupid reason name resolving does not work if we do not do this
-systemctl enable dhcpcd
+systemctl enable dhcpcd > /dev/null
 
-# Install tools and X
-pacman -S --noconfirm netctl openbox midori ttf-freefont
-pacman -S --noconfirm xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool
+echo "Installing software"
+pacman -S --noconfirm netctl openbox midori ttf-freefont > /dev/null
+pacman -S --noconfirm xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool > /dev/null
 
-# Install display crontab
-sudo -u display crontab /opt/home/display/crontab
+echo "Installing crontab"
+sudo -u display crontab /opt/home/display/crontab > /dev/null
 
-# Move log directry to tmpfs partition
+echo "Moveing log directry to tmpfs partition"
 rm -rf /var/log
 ln -s /run/log /var/log
 
-# Reboot
+echo "All finished"
+read -p "Press [Enter] key to reboot..."
 reboot
