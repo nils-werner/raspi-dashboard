@@ -17,14 +17,6 @@ This script assumes you have done the following:
 
 Installed the latest image of [archlinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) and booted the system.
 
-Customized your mirrorlist
-
-    vi /etc/pacman.d/mirrorlist
-
-Updated sources and installed a proper editor
-
-    pacman -Sy vim
-
 Edited locale and keyboard layout as well as timezone
 
     echo KEYMAP=\"de-latin1-nodeadkeys\" > /etc/vconsole.conf
