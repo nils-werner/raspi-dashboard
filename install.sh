@@ -28,12 +28,13 @@ systemctl disable getty@tty1 > /dev/null
 systemctl enable autologin@tty1 > /dev/null
 
 echo "Setting up network"
+pacman -S --noconfirm netctl > /dev/null
 # For some stupid reason name resolving does not work if we do not do this
 systemctl enable dhcpcd > /dev/null
 netctl enable wlan0 > /dev/null
 
 echo "Installing software"
-pacman -S --noconfirm netctl openbox midori ttf-freefont > /dev/null
+pacman -S --noconfirm openbox midori ttf-freefont > /dev/null
 pacman -S --noconfirm xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool > /dev/null
 
 echo "Installing crontab"
