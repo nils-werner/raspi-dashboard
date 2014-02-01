@@ -1,7 +1,7 @@
 kioskOS
 =======
 
-kioskOS is a script to modify a Arch Linux installation running on a Raspberry Pi. The result is a Linux that
+kioskOS is a script to modify a Arch Linux installation running on a Raspberry Pi that
 
  - automatically boots into a minimalistic, frameless browser when started
  - works entirely read-only
