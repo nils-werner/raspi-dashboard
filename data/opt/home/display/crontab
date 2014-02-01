@@ -1,5 +1,10 @@
 DISPLAY=:0
 
+# Switch off display at 10pm
 0 22 * * * /opt/vc/bin/tvservice -o
+
+# Reboot system at 7:30 am
 30 7 * * * sudo reboot
+
+# Restart browser every hour
 0 * * * * killall midori
