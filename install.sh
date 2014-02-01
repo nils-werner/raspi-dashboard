@@ -21,14 +21,16 @@ if ! id -u display >/dev/null 2>&1; then
 fi
 chown -R display:users /opt/home/display/
 
-echo "Enable auto login service"
+echo "Setting up auto login service"
 systemctl daemon-reload > /dev/null
 systemctl enable rc-local > /dev/null
 systemctl disable getty@tty1 > /dev/null
 systemctl enable autologin@tty1 > /dev/null
 
+echo "Setting up network"
 # For some stupid reason name resolving does not work if we do not do this
 systemctl enable dhcpcd > /dev/null
+netctl enable wlan0 > /dev/null
 
 echo "Installing software"
 pacman -S --noconfirm netctl openbox midori ttf-freefont > /dev/null
