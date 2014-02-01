@@ -13,7 +13,7 @@ Please note that this project does not include any webserver or storage to save 
 Preparations
 ------------
 
-This script assumes you have done the following:
+This script assumes that you have a good knowledge of how Arch Linux does things and that you have done the following:
 
 Installed the latest image of [archlinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) and booted the system.
 
@@ -36,12 +36,20 @@ Installed Git
 
 And lastly grown the partition to be at least 4 GB in size (use `resize.sh` provided here if unsure what to do)
 
-Customization
--------------
+Installation
+------------
 
 Clone the sources
 
     git clone https://github.com/nils-werner/kioskOS.git
+
+After customizing your kiosk, run the installer
+
+    cd kioskOS
+    bash install.sh
+
+Customization
+-------------
 
 There are two places you might want to customize:
 
@@ -55,13 +63,6 @@ secondly
 
 contains a field named `homepage`. This field will be loaded by the browser upon booting. Insert your URL here.
 
-Installation
-------------
-
-After customizing your kiosk, run the installer
-
-    cd kioskOS
-    bash install.sh
 
 Feedback, Contributions
 -----------------------
