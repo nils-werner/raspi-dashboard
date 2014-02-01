@@ -4,9 +4,9 @@ kioskOS
 kioskOS is a script to modify a Arch Linux installation running on a Raspberry Pi. The result is a Linux that
 
  - automatically boots into a minimalistic, frameless browser when started
- - is 100% robust to not being shut down
+ - works entirely read-only
 
-The result is a display driver that can be switched on and off at any time of the day and that will still reliably show the same image after being switched on again.
+The result is a display driver that can be switched on and off at any time of the day and that will still reliably show the same image after being switched on again. This means once the system is set up no instructions or special knowledge are necessary to start and stop the display: Simply cutting the power will power the device down.
 
 Please note that this project does not include any webserver or storage to save data to be shown. The data to be shown must be accessible over the network, provided by a different device.
 
