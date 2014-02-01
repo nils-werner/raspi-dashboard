@@ -25,7 +25,7 @@ l
 
 
 
-w" | fdisk -cu /dev/mmcblk0 > /dev/null
+w" | fdisk /dev/mmcblk0 > /dev/null
 
     echo "Partition table has been changed."
     read -p "Press [Enter] key to reboot..."
