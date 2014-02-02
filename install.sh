@@ -39,8 +39,7 @@ netctl enable wlan0
 
 echo "Installing software"
 read -p "Press [Enter] key to continue..."
-pacman -S --noconfirm openbox midori ttf-freefont
-pacman -S --noconfirm xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool
+pacman -S --noconfirm openbox midori ttf-freefont xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool
 
 echo "Installing crontab"
 read -p "Press [Enter] key to continue..."
