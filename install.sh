@@ -2,9 +2,9 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "Installing sudo"
+echo "Installing build dependencies"
 read -p "Press [Enter] key to continue..."
-pacman -S --noconfirm sudo
+pacman -S --noconfirm sudo patch diff
 
 echo "Copying files in place"
 read -p "Press [Enter] key to continue..."
