@@ -3,8 +3,8 @@ DISPLAY=:0
 # Switch off display at 10pm
 0 22 * * * /opt/vc/bin/tvservice -o
 
-# Reboot system at 7:30 am
-30 7 * * * sudo reboot
+# Switch on display at 7:30 am
+30 7 * * * /opt/vc/bin/tvservice -p; /usr/bin/fbset -depth 8; /usr/bin/fbset -depth 16
 
 # Restart browser every hour
 0 * * * * killall midori
