@@ -25,7 +25,7 @@ l
 
 
 
-w" | fdisk /dev/mmcblk0 > /dev/null
+w" | fdisk /dev/mmcblk0
 
     echo "Partition table has been changed."
     read -p "Press [Enter] key to reboot..."
@@ -37,7 +37,7 @@ else
     then
         echo "Continuing with step two..."
         # Resize partition
-        resize2fs /dev/mmcblk0p5 > /dev/null
+        resize2fs /dev/mmcblk0p5
 
         echo "Partition has been resized."
         read -p "Press [Enter] key to reboot..."

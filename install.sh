@@ -1,56 +1,55 @@
 #/bin/env bash
 
-echo "Installing sudo"
-pacman -S --noconfirm sudo > /dev/null
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "Installing build dependencies"
+read -p "Press [Enter] key to continue..."
+pacman -S --noconfirm sudo patch diffutils
 
 echo "Copying files in place"
+read -p "Press [Enter] key to continue..."
 cp -r data/* /
 
-echo "Customizing Config and Kernel Commandline"
-echo display_rotate=3 >> /boot/config.txt
-echo disable_overscan=1 >> /boot/config.txt
+echo "Patching system files"
+read -p "Press [Enter] key to continue..."
+cd /
+patch -p1 -i $DIR/patch/boot-etc.patch
+cd $DIR
 
-echo "Free enough memory for the browser to work"
-echo gpu_mem=64 >> /boot/config.txt
-echo gpu_mem_512=64 >> /boot/config.txt
-echo gpu_mem_256=64 >> /boot/config.txt
-echo arm_freq=1000 >> /boot/config.txt
-echo core_freq=500 >> /boot/config.txt
-echo sdram_freq=500 >> /boot/config.txt
-echo over_voltage=6 >> /boot/config.txt
-
-
-echo -n " ro" >> /boot/cmdline.txt
-
-echo "Createing display user"
+echo "Creating display user"
+read -p "Press [Enter] key to continue..."
 if ! id -u display >/dev/null 2>&1; then
     useradd -g users -s /bin/bash -d /home/display display
 fi
 chown -R display:users /opt/home/display/
 
 echo "Setting up auto login service"
-systemctl daemon-reload > /dev/null
-systemctl enable rc-local > /dev/null
-systemctl disable getty@tty1 > /dev/null
-systemctl enable autologin@tty1 > /dev/null
+read -p "Press [Enter] key to continue..."
+systemctl daemon-reload
+systemctl enable rc-local
+systemctl disable getty@tty1
+systemctl enable autologin@tty1
 
 echo "Setting up network"
-pacman -S --noconfirm netctl > /dev/null
+read -p "Press [Enter] key to continue..."
+pacman -S --noconfirm netctl
 # For some stupid reason name resolving does not work if we do not do this
-systemctl enable dhcpcd > /dev/null
-netctl enable wlan0 > /dev/null
+systemctl enable dhcpcd
+netctl enable wlan0
 
 echo "Installing software"
-pacman -S --noconfirm openbox midori ttf-freefont > /dev/null
-pacman -S --noconfirm xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool > /dev/null
+read -p "Press [Enter] key to continue..."
+pacman -S --noconfirm openbox midori ttf-freefont xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool
 
 echo "Installing crontab"
-sudo -u display crontab /opt/home/display/crontab > /dev/null
+read -p "Press [Enter] key to continue..."
+sudo -u display crontab /opt/home/display/crontab
 
-echo "Moveing log directry to tmpfs partition"
+echo "Moving log directry to tmpfs partition"
+read -p "Press [Enter] key to continue..."
 rm -rf /var/log
 ln -s /run/log /var/log
 
-echo "All finished"
-read -p "Press [Enter] key to reboot..."
+echo "All finished, rebooting"
+read -p "Press [Enter] key to continue..."
 reboot
