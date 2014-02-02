@@ -31,15 +31,17 @@ diff -rauB orig/boot/config.txt new/boot/config.txt
 +display_rotate=3
 +disable_overscan=1
 diff -rauB orig/etc/fstab new/etc/fstab
---- orig/etc/fstab	2014-02-02 18:31:34.073752405 +0100
-+++ new/etc/fstab	2014-02-02 18:26:51.000000000 +0100
-@@ -2,5 +2,5 @@
+--- orig/etc/fstab	2014-02-02 19:18:10.838234275 +0100
++++ new/etc/fstab	2014-02-02 19:19:22.842541582 +0100
+@@ -1,5 +1,6 @@
+ # 
  # /etc/fstab: static file system information
  #
- # <file system>        <dir>         <type>    <options>          <dump> <pass>
+-# <file system>	<dir>	<type>	<options>	<dump>	<pass>
 -/dev/mmcblk0p1  /boot           vfat    defaults        0       0
-+/dev/mmcblk0p1  /boot           vfat    defaults,ro        0       0
- tmpfs           /home           tmpfs   defaults,noatime,mode=0755        0
++# <file system> <dir>   <type>  <options>   <dump>  <pass>
++/dev/mmcblk0p1  /boot           vfat    defaults,ro     0       0
++tmpfs           /home           tmpfs   defaults,noatime,mode=0755        0
 diff -rauB orig/etc/sudoers new/etc/sudoers
 --- orig/etc/sudoers	2014-02-02 18:31:43.465898970 +0100
 +++ new/etc/sudoers	2014-02-02 18:26:51.000000000 +0100
