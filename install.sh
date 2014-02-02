@@ -20,7 +20,7 @@ echo sdram_freq=500 >> /boot/config.txt
 echo over_voltage=6 >> /boot/config.txt
 
 
-echo -n " ro" >> /boot/commandline.txt
+echo -n " ro" >> /boot/cmdline.txt
 
 echo "Createing display user"
 if ! id -u display >/dev/null 2>&1; then
