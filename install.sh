@@ -1,28 +1,19 @@
 #/bin/env bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 echo "Installing sudo"
 pacman -S --noconfirm sudo > /dev/null
 
 echo "Copying files in place"
 cp -r data/* /
+cd /
 
-echo "Customizing Config and Kernel Commandline"
-echo display_rotate=3 >> /boot/config.txt
-echo disable_overscan=1 >> /boot/config.txt
+echo "Patching system files"
+patch -p1 -i $DIR/patch/boot-etc.patch
+cd $DIR
 
-echo "Free enough memory for the browser to work"
-echo gpu_mem=64 >> /boot/config.txt
-echo gpu_mem_512=64 >> /boot/config.txt
-echo gpu_mem_256=64 >> /boot/config.txt
-echo arm_freq=1000 >> /boot/config.txt
-echo core_freq=500 >> /boot/config.txt
-echo sdram_freq=500 >> /boot/config.txt
-echo over_voltage=6 >> /boot/config.txt
-
-
-echo -n " ro" >> /boot/cmdline.txt
-
-echo "Createing display user"
+echo "Creating display user"
 if ! id -u display >/dev/null 2>&1; then
     useradd -g users -s /bin/bash -d /home/display display
 fi
