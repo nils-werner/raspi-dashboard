@@ -9,10 +9,10 @@ pacman -S --noconfirm sudo patch diffutils
 echo "Copying files in place"
 read -p "Press [Enter] key to continue..."
 cp -r data/* /
-cd /
 
 echo "Patching system files"
 read -p "Press [Enter] key to continue..."
+cd /
 patch -p1 -i $DIR/patch/boot-etc.patch
 cd $DIR
 
@@ -45,7 +45,7 @@ echo "Installing crontab"
 read -p "Press [Enter] key to continue..."
 sudo -u display crontab /opt/home/display/crontab
 
-echo "Moveing log directry to tmpfs partition"
+echo "Moving log directry to tmpfs partition"
 read -p "Press [Enter] key to continue..."
 rm -rf /var/log
 ln -s /run/log /var/log
