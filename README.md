@@ -17,6 +17,10 @@ This script assumes that you have a good knowledge of how Arch Linux does things
 
 Installed the latest image of [archlinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) and booted the system.
 
+Changed the `root` user password
+
+    passwd
+
 Edited locale and keyboard layout as well as timezone
 
     echo KEYMAP=\"de-latin1-nodeadkeys\" > /etc/vconsole.conf
