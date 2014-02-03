@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Installing build dependencies"
 read -p "Press [Enter] key to continue..."
-pacman -S --noconfirm sudo patch diffutils
+pacman -S --noconfirm --needed sudo patch diffutils
 
 echo "Copying files in place"
 read -p "Press [Enter] key to continue..."
@@ -30,7 +30,7 @@ systemctl enable autologin@tty1
 
 echo "Setting up network"
 read -p "Press [Enter] key to continue..."
-pacman -S --noconfirm netctl
+pacman -S --needed --noconfirm netctl
 # For some stupid reason name resolving does not work if we do not do this
 systemctl enable dhcpcd
 
@@ -43,7 +43,7 @@ fi
 
 echo "Installing software"
 read -p "Press [Enter] key to continue..."
-pacman -S --noconfirm ratpoison dwb ttf-freefont xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool fbset
+pacman -S --needed --noconfirm ratpoison dwb ttf-freefont xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool fbset
 
 echo "Installing crontab"
 read -p "Press [Enter] key to continue..."
