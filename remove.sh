@@ -41,7 +41,7 @@ cd $DIR
 
 echo "Removing software"
 read -p "Press [Enter] key to continue..."
-pacman -R --noconfirm openbox midori ttf-freefont xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool fbset
+pacman -Rs --noconfirm openbox midori ttf-freefont xorg-server xorg-xinit xorg-utils xorg-server-utils xf86-video-fbdev unclutter xdotool fbset
 
 echo "Creatng dedicated log directory"
 read -p "Press [Enter] key to continue..."
