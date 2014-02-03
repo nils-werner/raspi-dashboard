@@ -59,7 +59,7 @@ There are two places you might want to customize:
 
     data/etc/netctl/wlan0
 
-is a generic template for a wireless LAN connection, protected by WPA. Input your WLAN SSID and password if you want to use wireless LAN
+is a generic template for a wireless LAN connection, protected by WPA. Input your WLAN SSID and password if you want to use wireless LAN. The `wlan0` profile will be installed but only actually be activated if you actually change these values.
 
 secondly 
 
