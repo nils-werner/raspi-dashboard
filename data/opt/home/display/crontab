@@ -7,4 +7,4 @@ DISPLAY=:0
 30 7 * * * /opt/vc/bin/tvservice -p; /usr/bin/fbset -depth 8; /usr/bin/fbset -depth 16
 
 # Restart browser every hour
-0 * * * * killall midori
+0 * * * * killall dwb
