@@ -63,9 +63,9 @@ is a generic template for a wireless LAN connection, protected by WPA. Input you
 
 secondly 
 
-    data/home/display/.config/midori/config
+    data/home/display/.xinitrc
 
-contains a field named `homepage`. This field will be loaded by the browser upon booting. Insert your URL here.
+contains a line `dwb -R http://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
 
 
 Feedback, Contributions
