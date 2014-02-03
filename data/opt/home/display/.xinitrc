@@ -1,8 +1,6 @@
 xset s off
 xset -dpms
-openbox-session &
-unclutter -idle 1 -jitter 2 -root &
-#midori -e Navigationbar -e Fullscreen
-xdotool sleep 30 key Tab &
-midori
+ratpoison &
+xdotool sleep 30 key x key x &
+dwb -R http://www.google.com/
 sleep 5
