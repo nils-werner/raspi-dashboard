@@ -8,7 +8,11 @@ raspi-dashboard is a script to modify a Arch Linux installation running on a Ras
 
 The result is a display driver that can be switched on and off at any time of the day and that will still reliably show the same image after being switched on again. This means once the system is set up no instructions or special knowledge are necessary to start and stop the display: Simply cutting the power will power the device down.
 
-Please note that this project does not include any webserver or storage to save data to be shown. The data to be shown must be accessible over the network, provided by a different device.
+Please note that this project does not include any webserver or storage to save data to be shown. The data to be shown must be accessible over the network, provided by a different device or service, for example:
+
+ - [Status Board at Panic](http://www.panic.com/blog/the-panic-status-board/)
+ - [Geckoboard](http://www.geckoboard.com/)
+ - [Shopify's dashing](https://github.com/Shopify/dashing)
 
 Preparations
 ------------
