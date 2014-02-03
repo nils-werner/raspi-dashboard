@@ -12,7 +12,7 @@ Please note that this project does not include any webserver or storage to save 
 
  - [Status Board at Panic](http://www.panic.com/blog/the-panic-status-board/)
  - [Geckoboard](http://www.geckoboard.com/)
- - [Shopify's dashing](https://github.com/Shopify/dashing)
+ - [Shopify's dashing](http://shopify.github.io/dashing/)
 
 Preparations
 ------------
@@ -49,11 +49,11 @@ Installation
 
 Clone the sources
 
-    git clone https://github.com/nils-werner/kioskOS.git
+    git clone https://github.com/nils-werner/raspi-dashboard.git
 
-After customizing your kiosk, run the installer
+After customizing your dashboard, run the installer
 
-    cd kioskOS
+    cd raspi-dashboard
     bash install.sh
 
 Customization
@@ -75,4 +75,4 @@ contains a line `dwb -R http://www.google.com/`. The URL in this line will be lo
 Feedback, Contributions
 -----------------------
 
-This is a very rough first attempt to create a simple and robust kiosk display driver. Feedback and improvements are very welcome!
+This is a very rough first attempt to create a simple and robust dashboard display driver. Feedback and improvements are very welcome!
