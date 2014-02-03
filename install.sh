@@ -18,9 +18,7 @@ cd $DIR
 
 echo "Creating display user"
 read -p "Press [Enter] key to continue..."
-if ! id -u display >/dev/null 2>&1; then
-    useradd -g users -s /bin/bash -d /home/display display
-fi
+useradd -g users -s /bin/bash -d /home/display display
 chown -R display:users /opt/home/display/
 
 echo "Setting up auto login service"
