@@ -1,7 +1,7 @@
-kioskOS
-=======
+raspi-dashboard
+===============
 
-kioskOS is a script to modify a Arch Linux installation running on a Raspberry Pi that
+raspi-dashboard is a script to modify a Arch Linux installation running on a Raspberry Pi that
 
  - automatically boots into a minimalistic, frameless browser when started
  - works entirely read-only
