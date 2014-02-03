@@ -29,7 +29,8 @@ netctl disable wlan0
 echo "Removing installed files"
 read -p "Press [Enter] key to continue..."
 cd data
-find . -exec rm -rf /{} \;
+find . -type f -exec rm -rf /{} \;
+rm -rf /opt/home
 cd $DIR
 
 echo "Unpatching system files"
