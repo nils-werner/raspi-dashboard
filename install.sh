@@ -33,7 +33,13 @@ read -p "Press [Enter] key to continue..."
 pacman -S --noconfirm netctl
 # For some stupid reason name resolving does not work if we do not do this
 systemctl enable dhcpcd
-netctl enable wlan0
+
+# Check if WiFi has actually been changed and contains reasonable data
+if [ ! $(md5sum data/etc/netctl/wlan0 | awk '{print $1}') = "cb0c43d7468a7880bb3f1be4a707cf4d" ]
+then
+    echo "Installing WiFi"
+    netctl enable wlan0
+fi
 
 echo "Installing software"
 read -p "Press [Enter] key to continue..."
