@@ -4,7 +4,7 @@ DISPLAY=:0
 0 22 * * * /opt/vc/bin/tvservice -o
 
 # Switch on display at 7:30 am
-30 7 * * * /opt/vc/bin/tvservice -p; /usr/bin/fbset -depth 8; /usr/bin/fbset -depth 16
+30 7 * * * /opt/vc/bin/tvservice -p; /usr/bin/fbset -depth 8; /usr/bin/fbset -depth 16; /usr/bin/sudo /usr/bin/reboot
 
 # Restart browser every hour
 0 * * * * killall dwb
