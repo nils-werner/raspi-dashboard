@@ -18,7 +18,7 @@ cd $DIR
 
 echo "Creating display user"
 read -p "Press [Enter] key to continue..."
-useradd -g users -s /bin/bash -d /home/display display
+useradd -g users -G video -s /bin/bash -d /home/display display
 chown -R display:users /opt/home/display/
 
 echo "Setting up auto login service"
