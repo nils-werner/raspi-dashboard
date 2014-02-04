@@ -59,7 +59,7 @@ After customizing your dashboard, run the installer
 Customization
 -------------
 
-There are two places you might want to customize:
+There are three places you might want to customize:
 
     data/etc/netctl/wlan0
 
@@ -70,6 +70,16 @@ secondly
     data/home/display/.xinitrc
 
 contains a line `dwb -R http://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
+
+Lastly, the Raspberry Pi is configured to boot with an image rotated 90 degrees to the left. Remove the line
+
+    +display_rotate=3
+
+in
+
+    patch/boot-etc.patch
+
+if you want to boot with a normal image instead.
 
 
 Feedback, Contributions
