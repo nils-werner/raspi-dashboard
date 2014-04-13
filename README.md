@@ -33,6 +33,8 @@ Edited locale and keyboard layout as well as timezone
     locale-gen
     ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime -f
 
+Edited the pacman mirrorlist in `/etc/pacman.d/mirrorlist`.
+
 Properly initialized pacman and upgraded system
 
     pacman-key --init
@@ -67,7 +69,7 @@ is a generic template for a wireless LAN connection, protected by WPA. Input you
 
 secondly 
 
-    data/home/display/.xinitrc
+    data/opt/home/display/.xinitrc
 
 contains a line `dwb -R http://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
 
