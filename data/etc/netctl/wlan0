@@ -4,6 +4,7 @@ Connection=wireless
 Security=wpa
 
 IP=dhcp
+ExecUpPost='/usr/bin/ntpd -gq || true'
 
 ESSID='WLAN-SSID'
 # Prepend hexadecimal keys with \"
