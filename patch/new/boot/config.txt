@@ -74,9 +74,9 @@ over_voltage=6
 
 gpu_mem_512=64
 gpu_mem_256=64
-cma_lwm=16
-cma_hwm=32
-cma_offline_start=16
+#cma_lwm=16
+#cma_hwm=32
+#cma_offline_start=16
 
 display_rotate=3
 disable_overscan=1

@@ -74,6 +74,6 @@
 
 gpu_mem_512=316
 gpu_mem_256=128
-cma_lwm=16
-cma_hwm=32
-cma_offline_start=16
+#cma_lwm=16
+#cma_hwm=32
+#cma_offline_start=16
