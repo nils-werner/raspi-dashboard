@@ -1,3 +1,5 @@
 #!/bin/bash
 
 cp -rp /opt/home/* /home
+mkdir /var/log/journal
+systemctl restart systemd-journald
