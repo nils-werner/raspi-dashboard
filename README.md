@@ -30,6 +30,9 @@ Edited locale and keyboard layout as well as timezone
     echo KEYMAP=\"de-latin1-nodeadkeys\" > /etc/vconsole.conf
     echo LANG=\"de_DE.UTF-8\" > /etc/locale.conf
     echo LANGUAGE=\"de_DE.UTF-8\" >> /etc/locale.conf
+
+Uncommented the locales in `/etc/locale.gen`, then ran
+
     locale-gen
     ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime -f
 
