@@ -21,7 +21,7 @@ This script assumes that you have a good knowledge of how Arch Linux does things
 
 Installed the latest image of [archlinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) and booted the system.
 
-Changed the `root` user password
+Changed the all passwords
 
     passwd
 
@@ -36,18 +36,10 @@ Uncommented the locales in `/etc/locale.gen`, then ran
     locale-gen
     ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime -f
 
-Edited the pacman mirrorlist in `/etc/pacman.d/mirrorlist`.
-
-Properly initialized pacman and upgraded system
+Properly initialized pacman and upgraded the system
 
     pacman-key --init
     pacman -Syu
-
-Installed Git
-
-    pacman -S git
-
-And lastly grown the partition to be at least 4 GB in size (use `resize.sh` provided here if unsure what to do)
 
 Installation
 ------------
@@ -56,38 +48,13 @@ Clone the sources
 
     git clone https://github.com/nils-werner/raspi-dashboard.git
 
-After customizing your dashboard, run the installer
+After customizing your dashboard, create the package and install it
 
-    cd raspi-dashboard
-    bash install.sh
+    makepkg -si
 
 Customization
 -------------
 
-There are three places you might want to customize:
-
-    data/etc/netctl/wlan0
-
-is a generic template for a wireless LAN connection, protected by WPA. Input your WLAN SSID and password if you want to use wireless LAN. The `wlan0` profile will be installed but only actually be activated if you actually change these values.
-
-secondly 
-
-    data/opt/home/display/.xinitrc
+    /home/display/.xinitrc
 
 contains a line `dwb -R http://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
-
-Lastly, the Raspberry Pi is configured to boot with an image rotated 90 degrees to the left. Remove the line
-
-    +display_rotate=3
-
-in
-
-    patch/boot-etc.patch
-
-if you want to boot with a normal image instead.
-
-
-Feedback, Contributions
------------------------
-
-This is a very rough first attempt to create a simple and robust dashboard display driver. Feedback and improvements are very welcome!
