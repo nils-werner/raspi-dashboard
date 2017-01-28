@@ -10,4 +10,4 @@ DISPLAY=:0
 30 7 * * * /opt/vc/bin/tvservice -p; /usr/bin/sudo /usr/bin/reboot
 
 # Restart browser every hour
-0 * * * * killall dwb
+0 * * * * killall qutebrowser

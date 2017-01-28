@@ -21,7 +21,7 @@ Customization
 
     /home/display/.xinitrc
 
-contains a line `dwb -R http://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
+contains a line `qutebrowser :fullscreen http://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
 
 Readonly filesystem
 -------------------
