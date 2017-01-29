@@ -1,15 +1,12 @@
-# Disable screensaver
-xset s off
-xset -dpms
+#
+# ~/.bashrc
+#
 
-# Start window manager
-ratpoison &
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# Press 'xx' in 30 seconds to hide tab- and statusbar
-xdotool sleep 30 key x key x &
+alias ls='ls --color=auto'
+alias halt='sudo halt'
+PS1='[\u@\h \W]\$ '
 
-# Start browser
-dwb -R http://www.google.com/
-
-# Do not immediately restart after browser was quit/killed/crashed
-sleep 5
+export EDITOR="vim"
