@@ -9,33 +9,6 @@ Please note that this project does not include any webserver or storage to save 
  - [Geckoboard](http://www.geckoboard.com/)
  - [Shopify's dashing](http://shopify.github.io/dashing/)
 
-Preparations
-------------
-
-This script assumes that you have a good knowledge of how Arch Linux does things and that you have done the following:
-
-Installed the latest image of [archlinux ARM](http://archlinuxarm.org/) and booted the system.
-
-Changed the all passwords
-
-    passwd
-
-Edited locale and keyboard layout as well as timezone
-
-    echo KEYMAP=\"de-latin1-nodeadkeys\" > /etc/vconsole.conf
-    echo LANG=\"de_DE.UTF-8\" > /etc/locale.conf
-    echo LANGUAGE=\"de_DE.UTF-8\" >> /etc/locale.conf
-
-Uncommented the locales in `/etc/locale.gen`, then ran
-
-    locale-gen
-    ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime -f
-
-Properly initialized pacman and upgraded the system
-
-    pacman-key --init
-    pacman -Syu
-
 Installation
 ------------
 
