@@ -3,15 +3,15 @@ post_install() {
   chown -R display:users /home/display
   systemctl daemon-reload
   systemctl disable getty@tty1
-  systemctl enable autologin@tty1
+  systemctl enable display-autologin@tty1
   sudo -u display crontab /home/display/crontab
 }
 
 pre_remove() {
   sudo -u display crontab -r
   killall -u display
-  systemctl stop autologin@tty1
-  systemctl disable autologin@tty1
+  systemctl stop display-autologin@tty1
+  systemctl disable display-autologin@tty1
   systemctl enable getty@tty1
   systemctl start getty@tty1
 }
