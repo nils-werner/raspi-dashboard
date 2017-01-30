@@ -5,6 +5,15 @@ post_install() {
   systemctl disable getty@tty1
   systemctl enable display-autologin@tty1
   sudo -u display crontab /home/display/crontab
+  cat << EOF
+==> You should enable the cron and NTP services by running:
+# systemctl enable cronie
+# timedatectl set-ntp true
+
+To disable:
+# systemctl disable cronie
+# timedatectl set-ntp false
+EOF
 }
 
 pre_remove() {
