@@ -6,7 +6,7 @@ xset -dpms
 ratpoison &
 
 # Start browser
-qutebrowser :fullscreen http://www.google.com/
+qutebrowser http://www.google.com/
 
 # Do not immediately restart after browser was quit/killed/crashed
 sleep 5
