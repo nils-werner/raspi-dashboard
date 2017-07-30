@@ -1,6 +1,6 @@
 pkgname=dashboard
-pkgver=0.1
-pkgrel=2
+pkgver=1.0
+pkgrel=1
 pkgdesc="Browser based dashboard display on Raspberry Pi"
 arch=('any')
 url="https://github.com/nils-werner/arch-overlayroot"
