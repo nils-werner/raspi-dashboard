@@ -1,6 +1,6 @@
 pkgname=dashboard
 pkgver=0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Browser based dashboard display on Raspberry Pi"
 arch=('any')
 url="https://github.com/nils-werner/arch-overlayroot"
@@ -14,8 +14,6 @@ depends=(
   'ttf-freefont'
   'xorg-server'
   'xorg-xinit'
-  'xorg-utils'
-  'xorg-server-utils'
   'xf86-video-fbdev'
   'unclutter'
   'xdotool'
