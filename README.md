@@ -1,6 +1,12 @@
 raspi-dashboard
 ===============
 
+<p align="center">
+<img src="artwork/dashboard.png" width="360" />
+</p>
+
+[![Build Status](https://travis-ci.org/nils-werner/raspi-dashboard.svg?branch=master)](https://travis-ci.org/nils-werner/raspi-dashboard)
+
 raspi-dashboard is a script to modify a Arch Linux installation running on a Raspberry Pi that automatically boots into a minimalistic, frameless browser when started
 
 Please note that this project does not include any webserver or storage to save data to be shown. The data to be shown must be accessible over the network, provided by a different device or service, for example:
