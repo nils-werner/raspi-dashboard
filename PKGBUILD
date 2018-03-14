@@ -54,7 +54,7 @@ package() {
   install -Dm644 "$srcdir/Xauthority" "$pkgdir/home/display/.Xauthority"
   install -Dm644 "$srcdir/xinitrc" "$pkgdir/home/display/.xinitrc"
   install -Dm644 "$srcdir/crontab" "$pkgdir/home/display/crontab"
-  install -Dm644 "$srcdir/config.py" "$pkgdir/home/display/.qutebrowser/config.py"
+  install -Dm644 "$srcdir/config.py" "$pkgdir/home/display/.config/qutebrowser/config.py"
   install -dm750 "$pkgdir/etc/sudoers.d/"
   install -m440 "$srcdir/sudoers-reboot" "$pkgdir/etc/sudoers.d/display-reboot"
 }
