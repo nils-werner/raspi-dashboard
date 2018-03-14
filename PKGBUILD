@@ -18,6 +18,7 @@ depends=(
   'unclutter'
   'fbset'
   'cronie'
+  'qt5-webkit'  # qtwebengine is currently broken
 )
 install=dashboard.install
 source=(
