@@ -1,5 +1,5 @@
 pkgname=dashboard
-pkgver=1.0
+pkgver=1.1
 pkgrel=1
 pkgdesc="Browser based dashboard display on Raspberry Pi"
 arch=('any')
