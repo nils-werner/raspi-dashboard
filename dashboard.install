@@ -24,14 +24,14 @@ pre_remove() {
 post_remove() {
   userdel -r display
   systemctl daemon-reload
-}
-
-post_upgrade() {
-  chown -R display:users /home/display
-  sudo -u display crontab /home/display/crontab
   cat << EOF
 ==> You may disable the cron and NTP services by running:
 systemctl disable cronie
 timedatectl set-ntp false
 EOF
+}
+
+post_upgrade() {
+  chown -R display:users /home/display
+  sudo -u display crontab /home/display/crontab
 }
