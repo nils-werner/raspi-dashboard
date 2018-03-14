@@ -13,7 +13,12 @@ This project does not include any webserver or storage to save data to be shown.
 
  - [Status Board at Panic](http://www.panic.com/blog/the-panic-status-board/)
  - [Geckoboard](http://www.geckoboard.com/)
- - [Shopify's dashing](http://shopify.github.io/dashing/)
+ - [Dashing](http://shopify.github.io/dashing/)
+ - [Keen IO](http://keen.github.io/dashboards/)
+ - [Mozaik](http://mozaik.rocks/)
+ - [Grafana](https://grafana.com/)
+ - [Freeboard](http://freeboard.io/)
+ - ...
 
 Installation
 ------------
