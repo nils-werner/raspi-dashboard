@@ -11,13 +11,13 @@ Boot a Raspberry Pi directly into a minimalistic, frameless browser.
 
 This project does not include any webserver or storage to save data to be shown. The data to be shown must be accessible over the network, provided by a different device or service, for example:
 
- - [Status Board at Panic](http://www.panic.com/blog/the-panic-status-board/)
- - [Geckoboard](http://www.geckoboard.com/)
+ - [Status Board at Panic](https://www.panic.com/blog/the-panic-status-board/)
+ - [Geckoboard](https://www.geckoboard.com/)
  - [Dashing](http://shopify.github.io/dashing/)
- - [Keen IO](http://keen.github.io/dashboards/)
+ - [Keen IO](https://keen.github.io/dashboards/)
  - [Mozaik](http://mozaik.rocks/)
  - [Grafana](https://grafana.com/)
- - [Freeboard](http://freeboard.io/)
+ - [Freeboard](https://freeboard.io/)
  - ...
 
 Installation
@@ -27,12 +27,14 @@ Create the package and install it using
 
     makepkg -si
 
+and reboot.
+
 Customization
 -------------
 
     /home/display/.xinitrc
 
-contains a line `qutebrowser http://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
+contains a line `qutebrowser https://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
 
 Readonly filesystem
 -------------------
