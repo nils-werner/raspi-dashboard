@@ -32,7 +32,7 @@ and reboot.
 Customization
 -------------
 
-    /home/display/.xinitrc
+    /usr/lib/dashboard/.xinitrc
 
 contains a line `qutebrowser https://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
 

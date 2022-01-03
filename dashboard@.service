@@ -10,6 +10,7 @@ Description=Getty on %I
 Documentation=man:agetty(8) man:systemd-getty-generator(8)
 Documentation=http://0pointer.de/blog/projects/serial-console.html
 After=systemd-user-sessions.service plymouth-quit-wait.service
+Conflicts=getty@%I.service
 
 # If additional gettys are spawned during boot then we should make
 # sure that this is synchronized before getty.target, even though
@@ -24,7 +25,7 @@ ConditionPathExists=/dev/tty0
 
 [Service]
 # the VT is cleared by TTYVTDisallocate
-ExecStart=-/sbin/agetty --noclear -a display %I 38400 linux
+ExecStart=-/sbin/agetty --noclear -a dashboard %I 38400 linux
 Type=idle
 Restart=always
 RestartSec=0

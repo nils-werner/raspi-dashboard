@@ -1,0 +1,3 @@
+u dashboard -      "Dashboard User"    /usr/lib/dashboard     /bin/bash
+m dashboard users
+m dashboard video

@@ -1,10 +1,5 @@
 post_install() {
-  useradd -g users -G video -s /bin/bash -d /home/display display
-  chown -R display:users /home/display
-  systemctl daemon-reload
-  systemctl disable getty@tty1
-  systemctl enable display-autologin@tty1
-  sudo -u display crontab /home/display/crontab
+  post_upgrade
   cat << EOF
 ==> You should enable the cron and NTP services by running:
 systemctl enable cronie
@@ -13,17 +8,12 @@ EOF
 }
 
 pre_remove() {
-  sudo -u display crontab -r
-  killall -u display
-  systemctl stop display-autologin@tty1
-  systemctl disable display-autologin@tty1
-  systemctl enable getty@tty1
-  systemctl start getty@tty1
+  sudo -u dashboard crontab -r
+  killall -u dashboard
+  systemctl disable --now dashboard-autologin@tty1
 }
 
 post_remove() {
-  userdel -r display
-  systemctl daemon-reload
   cat << EOF
 ==> You may disable the cron and NTP services by running:
 systemctl disable cronie
@@ -32,6 +22,5 @@ EOF
 }
 
 post_upgrade() {
-  chown -R display:users /home/display
-  sudo -u display crontab /home/display/crontab
+  sudo -u dashboard crontab /usr/lib/dashboard/crontab
 }

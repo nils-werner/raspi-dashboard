@@ -1,9 +1,9 @@
 pkgname=dashboard
-pkgver=1.1
+pkgver=2.0
 pkgrel=1
 pkgdesc="Browser based dashboard display on Raspberry Pi"
 arch=('any')
-url="https://github.com/nils-werner/arch-overlayroot"
+url="https://github.com/nils-werner/arch-dashboard/"
 license=('MIT')
 depends=(
   'sudo'
@@ -30,10 +30,14 @@ source=(
   'config.py'
   'state'
   'dashboard.install'
-  'autologin@.service'
+  'dashboard@.service'
+  'dashboard.sysusers'
+  'dashboard.tmpfiles'
   'sudoers-reboot'
 )
 sha256sums=(
+  'SKIP'
+  'SKIP'
   'SKIP'
   'SKIP'
   'SKIP'
@@ -51,14 +55,16 @@ build() {
 }
 
 package() {
-  install -Dm644 "$srcdir/autologin@.service" "$pkgdir/etc/systemd/system/display-autologin@.service"
-  install -Dm644 "$srcdir/bash_profile" "$pkgdir/home/display/.bash_profile"
-  install -Dm644 "$srcdir/bashrc" "$pkgdir/home/display/.bashrc"
-  install -Dm644 "$srcdir/Xauthority" "$pkgdir/home/display/.Xauthority"
-  install -Dm644 "$srcdir/xinitrc" "$pkgdir/home/display/.xinitrc"
-  install -Dm644 "$srcdir/crontab" "$pkgdir/home/display/crontab"
-  install -Dm644 "$srcdir/config.py" "$pkgdir/home/display/.config/qutebrowser/config.py"
-  install -Dm644 "$srcdir/state" "$pkgdir/home/display/.local/share/qutebrowser/state"
+  install -Dm644 "$srcdir/dashboard@.service" "$pkgdir/etc/systemd/system/dashboard@.service"
+  install -Dm644 "${srcdir}/dashboard.sysusers" "${pkgdir}/usr/lib/sysusers.d/dashboard.conf"
+  install -Dm644 "${srcdir}/dashboard.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/dashboard.conf"
   install -dm750 "$pkgdir/etc/sudoers.d/"
-  install -m440 "$srcdir/sudoers-reboot" "$pkgdir/etc/sudoers.d/display-reboot"
+  install -m440 "$srcdir/sudoers-reboot" "$pkgdir/etc/sudoers.d/dashboard-reboot"
+  install -Dm644 "$srcdir/bash_profile" "$pkgdir/usr/lib/dashboard/.bash_profile"
+  install -Dm644 "$srcdir/bashrc" "$pkgdir/usr/lib/dashboard/.bashrc"
+  install -Dm644 "$srcdir/Xauthority" "$pkgdir/usr/lib/dashboard/.Xauthority"
+  install -Dm644 "$srcdir/xinitrc" "$pkgdir/usr/lib/dashboard/.xinitrc"
+  install -Dm644 "$srcdir/crontab" "$pkgdir/usr/lib/dashboard/crontab"
+  install -Dm644 "$srcdir/config.py" "$pkgdir/usr/lib/dashboard/.config/qutebrowser/config.py"
+  install -Dm644 "$srcdir/state" "$pkgdir/usr/lib/dashboard/.local/share/qutebrowser/state"
 }
