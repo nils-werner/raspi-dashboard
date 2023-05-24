@@ -27,11 +27,11 @@ Create the package and install it using
 
     makepkg -si
 
-and reboot. Enable the dashboard using
+Enable the dashboard using
 
     systemctl enable --now dashboard@tty7.service
 
-for peace of mind you can reboot the system every day by enabling
+For peace of mind you can reboot the system every day by enabling
 
     systemctl enable --now scheduled-reboot.timer
 

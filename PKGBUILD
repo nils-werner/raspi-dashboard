@@ -8,9 +8,10 @@ license=('MIT')
 depends=(
   'cage'
   'luakit'
+  'xorg-xwayland'
 )
 source=(
-  'dashboard@.service'
+  'dashboard.service'
   'dashboard.sysusers'
   'dashboard.tmpfiles'
   'dashboard.pam'
@@ -31,7 +32,7 @@ build() {
 }
 
 package() {
-  install -Dm644 "$srcdir/dashboard@.service" "$pkgdir/usr/lib/systemd/system/dashboard@.service"
+  install -Dm644 "$srcdir/dashboard.service" "$pkgdir/usr/lib/systemd/system/dashboard.service"
   install -Dm644 "${srcdir}/dashboard.sysusers" "${pkgdir}/usr/lib/sysusers.d/dashboard.conf"
   install -Dm644 "${srcdir}/dashboard.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/dashboard.conf"
   install -Dm644 "${srcdir}/dashboard.pam" "${pkgdir}/etc/pam.d/dashboard"
