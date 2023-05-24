@@ -1,1 +1,0 @@
-dashboard ALL=(ALL) NOPASSWD: /usr/bin/reboot

@@ -1,0 +1,8 @@
+[Unit]
+Description=Hourly Reboot
+
+[Timer]
+OnCalendar=*-*-* *:00:00
+
+[Install]
+WantedBy=timers.target

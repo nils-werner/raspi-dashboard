@@ -1,0 +1,6 @@
+[Unit]
+Description=Hourly Reboot
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemctl --force reboot
