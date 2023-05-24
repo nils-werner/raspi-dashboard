@@ -27,14 +27,26 @@ Create the package and install it using
 
     makepkg -si
 
-and reboot.
+and reboot. Enable the dashboard using
+
+    systemctl enable --now dashboard@tty7.service
+
+for peace of mind you can reboot the system every day by enabling
+
+    systemctl enable --now scheduled-reboot.timer
 
 Customization
 -------------
 
-    /usr/lib/dashboard/.xinitrc
+Edit the dashboard service
 
-contains a line `qutebrowser https://www.google.com/`. The URL in this line will be loaded by the browser upon booting. Insert your URL here.
+    systemctl edit dashboard@tty7.service
+
+and adjust the URL in
+
+    ExecStart=/usr/bin/cage /usr/bin/luakit "https://www.google.com"
+
+to your liking.
 
 Readonly filesystem
 -------------------
