@@ -29,7 +29,7 @@ Create the package and install it using
 
 Enable the dashboard using
 
-    systemctl enable --now dashboard@tty7.service
+    systemctl enable --now dashboard.service
 
 For peace of mind you can reboot the system every day by enabling
 
@@ -40,13 +40,14 @@ Customization
 
 Edit the dashboard service
 
-    systemctl edit dashboard@tty7.service
+    systemctl edit dashboard.service
 
-and adjust the URL in
+and adjust the service to your liking. For example an instance with the screened turned to the right and no input devices:
 
-    ExecStart=/usr/bin/cage /usr/bin/luakit "https://www.google.com"
-
-to your liking.
+    [Service]
+    ExecStart=
+    ExecStart=/usr/bin/cage -rd -- /usr/bin/luakit -U "https://duckduckgo.com/"
+    Environment=WLR_LIBINPUT_NO_DEVICES=1
 
 Readonly filesystem
 -------------------
